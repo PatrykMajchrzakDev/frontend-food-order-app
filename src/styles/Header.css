@@ -1,0 +1,17 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: whitesmoke;
+  padding: 0 10%;
+  align-items: center;
+  color: black;
+  z-index: 10;
+}
+
+.nav h2 {
+  margin-right: auto;
+}

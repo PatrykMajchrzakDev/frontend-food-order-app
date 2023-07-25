@@ -1,15 +1,15 @@
-import Cart from "./Cart/Cart";
-import "../styles/Header.css";
 import heroImage from "../assets/meals-table-min.png";
+import HeaderCart from "./HeaderCart";
+import "../styles/Header.css";
 const Header = () => {
   return (
     <>
-      <header className="nav">
-        <h2>TastyTrove</h2>
-        <Cart className="cart" />
+      <header className="header">
+        <h1>TastyTrove</h1>
+        <HeaderCart className="header-cart" />
       </header>
-      <div>
-        <img src={heroImage} alt="A table full of different meals" />
+      <div className="main-image">
+        <img src={heroImage} alt="A table full of delicious food!" />
       </div>
     </>
   );

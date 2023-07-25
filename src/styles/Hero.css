@@ -1,5 +1,11 @@
-.main-image {
-  width: 100%;
-  height: 40rem;
-  object-fit: cover;
+.hero {
+  position: relative;
+  transform: translateY(-6rem);
+  width: 60%;
+  padding: 5rem 2rem;
+  margin: 0 auto;
+  text-align: center;
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 1rem;
 }

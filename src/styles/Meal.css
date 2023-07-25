@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.meal-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-to-cart {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,10 +1,10 @@
-// import { useState } from "react";
+import "../../styles/AddToCartInput.css";
 
-const AddToCartInput = () => {
+const AddToCartInput = (props) => {
   return (
     <div>
-      <label htmlFor="">Amount</label>
-      <input type="number" value="1" />
+      <label className="label">{props.description}</label>
+      <input className="input" type={props.type} defaultValue={props.value} />
     </div>
   );
 };

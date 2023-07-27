@@ -1,7 +1,8 @@
+import "../../styles/AddToCartButton.css";
 const AddToCartButton = () => {
   return (
     <>
-      <button>Add</button>
+      <button className="btn">Add</button>
     </>
   );
 };

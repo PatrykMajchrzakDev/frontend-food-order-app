@@ -1,20 +1,20 @@
-import AddToCartButton from "./AddToCartButton";
+import AddToCartButton from "../UI/AddToCartButton";
 import AddToCartInput from "./AddToCartInput";
 import "../../styles/Meal.css";
 
-const Meal = () => {
+const Meal = (props) => {
   return (
-    <div className="container">
+    <li className="container">
       <div className="meal-info">
-        <span>Sushi</span>
-        <span>Fish and vegies</span>
-        <span>22 zł</span>
+        <span className="title">{props.name}</span>
+        <span className="description">{props.description}</span>
+        <span className="price">{props.price} zł</span>
       </div>
       <div className="add-to-cart">
-        <AddToCartInput />
+        <AddToCartInput description={"Amount"} type="number" value={1} />
         <AddToCartButton />
       </div>
-    </div>
+    </li>
   );
 };
 

@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  margin: 2rem 0;
+  border-bottom: 2px solid gray;
+  padding: 0 0 1rem 0;
 }
 
 .meal-info {
@@ -12,4 +15,19 @@
 .add-to-cart {
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 1.3rem;
+}
+
+.price {
+  color: rgb(57, 85, 138);
+  font-size: 1.3rem;
+  font-weight: bold;
 }

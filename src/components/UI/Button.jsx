@@ -8,7 +8,11 @@ const Button = (props) => {
   };
   return (
     <>
-      <button className="btn" style={customButtonStyles}>
+      <button
+        className="btn"
+        style={customButtonStyles}
+        onClick={props.onClick}
+      >
         {props.description}
       </button>
     </>

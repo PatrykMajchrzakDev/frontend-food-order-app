@@ -1,5 +1,5 @@
-import AddToCartButton from "../UI/AddToCartButton";
-import AddToCartInput from "./AddToCartInput";
+import Button from "../UI/Button";
+import AddToCartInput from "../UI/AddToCartInput";
 import "../../styles/Meal.css";
 
 const Meal = (props) => {
@@ -11,8 +11,15 @@ const Meal = (props) => {
         <span className="price">{props.price} zł</span>
       </div>
       <div className="add-to-cart">
-        <AddToCartInput description={"Amount"} type="number" value={1} />
-        <AddToCartButton />
+        <AddToCartInput
+          id={props.id}
+          description="Amount"
+          type="number"
+          value={1}
+          min={1}
+          max={9}
+        />
+        <Button description={"+ Add"} />
       </div>
     </li>
   );

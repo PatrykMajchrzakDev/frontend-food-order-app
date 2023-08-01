@@ -40,9 +40,9 @@ const MealsForm = () => {
   ));
 
   return (
-    <div className="form">
+    <section className="form">
       <ul>{mealsList}</ul>
-    </div>
+    </section>
   );
 };
 

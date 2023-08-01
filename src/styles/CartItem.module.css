@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid rgb(57, 85, 138);
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.details-container {
+  display: flex;
+  width: 10rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid rgb(57, 85, 138);
+  color: black;
+  padding: 0.1rem 1rem;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.btn:hover {
+  background-color: rgb(57, 85, 138);
+  color: white;
+}
+
+.price {
+  color: rgb(57, 85, 138);
+  padding-right: 2rem;
+  width: 10rem;
+  font-weight: bold;
+}
+
+.amount {
+  border: 1px solid black;
+  padding: 0.2rem 0.7rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

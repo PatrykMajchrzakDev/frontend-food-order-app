@@ -1,0 +1,46 @@
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.5rem;
+  max-height: 20rem;
+  overflow: auto;
+}
+
+.cart-amount {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  padding: 1rem 0 0 0;
+}
+
+.closeBtn {
+  color: black;
+  border: 2px solid darkred;
+  background-color: white;
+  padding: 0.5rem 3rem;
+}
+
+.closeBtn:hover {
+  color: white;
+  background-color: darkred;
+}
+
+.orderBtn {
+  color: black;
+  background-color: white;
+  border: 2px solid rgb(57, 85, 138);
+  padding: 0.5rem 3rem;
+}
+
+.orderBtn:hover {
+  color: white;
+  background-color: rgb(57, 85, 138);
+}

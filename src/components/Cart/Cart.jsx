@@ -1,11 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Modal from "../UI/Modal";
 import classes from "../../styles/Cart.module.css";
 import CartContext from "../../store/cart-context";
 import CartItem from "./CartItem";
+import OrderForm from "./OrderForm";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  const [isOrderClicked, setIsOrderClicked] = useState(false);
 
   const cartItemAddHandler = (item) => {
     cartCtx.addItem({ ...item, amount: 1 });
@@ -32,6 +34,10 @@ const Cart = (props) => {
       ))}
     </ul>
   );
+
+  const orderFoodBtnHandler = () => {
+    setIsOrderClicked(!isOrderClicked);
+  };
   return (
     <Modal onHideCart={props.onHideCart}>
       {cartItems}
@@ -44,8 +50,13 @@ const Cart = (props) => {
         <button onClick={props.onHideCart} className={classes.closeBtn}>
           Close
         </button>
-        {hasItems && <button className={classes.orderBtn}>Order</button>}
+        {hasItems && (
+          <button className={classes.orderBtn} onClick={orderFoodBtnHandler}>
+            Order
+          </button>
+        )}
       </div>
+      {isOrderClicked && <OrderForm />}
     </Modal>
   );
 };

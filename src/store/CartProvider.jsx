@@ -61,6 +61,10 @@ const cartReducer = (state, action) => {
     }
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
+
+  if (action.identifier === "CLEAR") {
+    return defaultCartState;
+  }
   //3
   //as part of reducer, new state snapshot have to be returned
   return defaultCartState;
@@ -87,11 +91,16 @@ const CartProvider = (props) => {
   const removeItemFromCartHandler = (id) => {
     dispatchCartAction({ identifier: "REMOVE_ITEM", id: id });
   };
+
+  const clearCartHandler = () => {
+    dispatchCartAction({ type: "CLEAR" });
+  };
   const cartContext = {
     items: cartState.items,
     totalAmount: cartState.totalAmount,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    clearCart: clearCartHandler,
   };
   return (
     <CartContext.Provider value={cartContext}>

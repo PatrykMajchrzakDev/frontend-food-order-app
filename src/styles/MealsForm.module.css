@@ -1,0 +1,20 @@
+.form {
+  padding: 2rem 2rem;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+  color: black;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.meals-loading {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+}
+
+.meals-error {
+  text-align: center;
+  color: red;
+  font-size: 2rem;
+}

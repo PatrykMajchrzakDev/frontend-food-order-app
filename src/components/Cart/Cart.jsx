@@ -7,6 +7,8 @@ import OrderForm from "./OrderForm";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [didSubmit, setDidSubmit] = useState(false);
   const [isOrderClicked, setIsOrderClicked] = useState(false);
 
   const cartItemAddHandler = (item) => {
@@ -38,25 +40,66 @@ const Cart = (props) => {
   const orderFoodBtnHandler = () => {
     setIsOrderClicked(!isOrderClicked);
   };
-  return (
-    <Modal onHideCart={props.onHideCart}>
+  const footerButtons = (
+    <div className={classes.footer}>
+      <button
+        type="button"
+        onClick={props.onHideCart}
+        className={classes.closeBtn}
+      >
+        Close
+      </button>
+      {hasItems && (
+        <button
+          type="button"
+          className={classes.orderBtn}
+          onClick={orderFoodBtnHandler}
+        >
+          Order
+        </button>
+      )}
+    </div>
+  );
+
+  const submitOrderHandler = async (userData) => {
+    setIsSubmitting(true);
+    await fetch(
+      "https://react-http-262f1-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({
+          user: userData,
+          orderedItems: cartCtx.items,
+        }),
+      }
+    );
+    setIsSubmitting(false);
+    setDidSubmit(true);
+    cartCtx.clearCart();
+  };
+
+  const cartModalContent = (
+    <>
       {cartItems}
       <div className={classes["cart-amount"]}>
         <span>Total Amount</span>
         <span>{totalAmount}</span>
       </div>
+      {footerButtons}
 
-      <div className={classes.footer}>
-        <button onClick={props.onHideCart} className={classes.closeBtn}>
-          Close
-        </button>
-        {hasItems && (
-          <button className={classes.orderBtn} onClick={orderFoodBtnHandler}>
-            Order
-          </button>
-        )}
-      </div>
-      {isOrderClicked && <OrderForm />}
+      {isOrderClicked && <OrderForm onSubmit={submitOrderHandler} />}
+    </>
+  );
+
+  const isSubmittingModalContent = <p>Sending order data...</p>;
+
+  const didSubmitModalContent = <p>Successfully sent the order!</p>;
+
+  return (
+    <Modal onHideCart={props.onHideCart}>
+      {!isSubmitting && !didSubmit && cartModalContent}
+      {isSubmitting && isSubmittingModalContent}
+      {didSubmit && didSubmitModalContent}
     </Modal>
   );
 };

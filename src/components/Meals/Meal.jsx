@@ -18,7 +18,6 @@ const Meal = (props) => {
 
     const enteredAmount = amountInputRef.current.value;
     const enteredAmountNumber = +enteredAmount;
-    console.log(enteredAmountNumber);
 
     if (
       enteredAmount.trim().length === 0 ||
